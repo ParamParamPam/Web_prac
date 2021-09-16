@@ -1,0 +1,450 @@
+Running 'log in'
+21:03:38
+1.
+open on http://localhost:8080/ OK
+21:03:39
+2.
+setWindowSize on 1936x1056 OK
+21:03:39
+3.
+click on id=index_log_in OK
+21:03:39
+4.
+click on id=input_username OK
+21:03:40
+5.
+type on id=input_username with value testAdmin OK
+21:03:41
+6.
+click on id=input_password OK
+21:03:42
+7.
+type on id=input_password with value testPsswd OK
+21:03:43
+8.
+click on id=log_in_button OK
+21:03:44
+9.
+assertElementPresent on id=index_admin_log_out OK
+21:03:45
+'log in' completed successfully
+21:03:46
+Running 'add product'
+21:04:00
+1.
+open on http://localhost:8080/logged OK
+21:04:01
+2.
+setWindowSize on 1511x1040 OK
+21:04:01
+3.
+click on id=index_admin_add_product OK
+21:04:01
+4.
+click on id=validation_product_title OK
+21:04:02
+5.
+type on id=validation_product_title with value test OK
+21:04:03
+6.
+click on id=validation_product_type OK
+21:04:03
+7.
+type on id=validation_product_type with value test OK
+21:04:03
+8.
+click on id=validation_product_company OK
+21:04:03
+9.
+type on id=validation_product_company with value test OK
+21:04:04
+10.
+click on id=validation_product_assemble OK
+21:04:04
+11.
+type on id=validation_product_assemble with value test OK
+21:04:04
+12.
+click on id=validation_characteristics OK
+21:04:04
+13.
+type on id=validation_characteristics with value test OK
+21:04:05
+14.
+click on id=validation_product_price OK
+21:04:05
+15.
+type on id=validation_product_price with value 12 OK
+21:04:05
+16.
+click on id=validation_amount OK
+21:04:05
+17.
+type on id=validation_amount with value 12 OK
+21:04:06
+18.
+click on id=add_product_button OK
+21:04:06
+19.
+click on css=tr:nth-child(3) a > span OK
+21:04:06
+'add product' completed successfully
+21:04:07
+Running 'edit product'
+21:04:15
+1.
+open on http://localhost:8080/logged OK
+21:04:15
+2.
+setWindowSize on 1511x1040 OK
+21:04:16
+3.
+click on css=tr:nth-child(3) a > span OK
+21:04:16
+4.
+click on id=product_admin_edit_button OK
+21:04:16
+5.
+click on id=inputTitle OK
+21:04:17
+6.
+type on id=inputTitle with value newtest OK
+21:04:17
+7.
+click on id=save_edit_product_button OK
+21:04:18
+8.
+click on id=product_admin_to_main OK
+21:04:18
+'edit product' completed successfully
+21:04:18
+Running 'delete product'
+21:04:46
+1.
+open on http://localhost:8080/logged OK
+21:04:47
+2.
+setWindowSize on 1511x1040 OK
+21:04:47
+3.
+click on css=tr:nth-child(4) a > span OK
+21:04:47
+4.
+click on id=product_admin_delete_button OK
+21:04:48
+'delete product' completed successfully
+21:04:49
+Running 'add customer'
+21:05:48
+1.
+open on http://localhost:8080/logged OK
+21:05:49
+2.
+setWindowSize on 1533x1040 OK
+21:05:49
+3.
+click on id=index_admin_customers OK
+21:05:49
+4.
+click on id=customers_add_customer OK
+21:05:50
+5.
+click on id=validation_default_username OK
+21:05:51
+6.
+type on id=validation_default_username with value AEGtt OK
+21:05:51
+7.
+click on id=input_password OK
+21:05:52
+8.
+type on id=input_password with value test OK
+21:05:52
+9.
+click on id=validation_default_first_name OK
+21:05:52
+10.
+type on id=validation_default_first_name with value test OK
+21:05:52
+11.
+click on id=validation_default_last_name OK
+21:05:53
+12.
+type on id=validation_default_last_name with value test OK
+21:05:53
+13.
+click on id=validation_default_address OK
+21:05:53
+14.
+type on id=validation_default_address with value test OK
+21:05:53
+15.
+click on id=validation_default_phone OK
+21:05:53
+16.
+type on id=validation_default_phone with value 899999999999 OK
+21:05:54
+17.
+click on id=validation_default_mail OK
+21:05:54
+18.
+type on id=validation_default_mail with value test@test.ru OK
+21:05:54
+19.
+click on id=add_customer_button OK
+21:05:54
+20.
+click on id=index_admin_customers OK
+21:05:55
+21.
+click on css=tr:nth-child(5) a > span OK
+21:05:55
+'add customer' completed successfully
+21:05:56
+Running 'edit customer'
+21:06:15
+1.
+open on http://localhost:8080/logged OK
+21:06:16
+2.
+setWindowSize on 1533x1040 OK
+21:06:16
+3.
+click on id=index_admin_customers OK
+21:06:17
+4.
+click on css=tr:nth-child(5) a > span OK
+21:06:17
+5.
+click on id=customer_admin_edit_button OK
+21:06:18
+6.
+click on id=input_first_name OK
+21:06:18
+7.
+type on id=input_first_name with value newtest OK
+21:06:19
+8.
+click on id=save_edit_customer_button OK
+21:06:19
+'edit customer' completed successfully
+21:06:19
+Running 'delete customer'
+21:06:28
+1.
+open on http://localhost:8080/logged OK
+21:06:29
+2.
+setWindowSize on 1533x1040 OK
+21:06:29
+3.
+click on id=index_admin_customers OK
+21:06:29
+4.
+click on css=tr:nth-child(5) a > span OK
+21:06:30
+5.
+click on id=customer_admin_delete_button OK
+21:06:30
+'delete customer' completed successfully
+21:06:30
+Running 'registration'
+21:07:40
+1.
+open on http://localhost:8080/ OK
+21:07:40
+2.
+setWindowSize on 1511x1040 OK
+21:07:40
+3.
+click on id=index_registration OK
+21:07:41
+4.
+click on id=validation_default_username OK
+21:07:41
+5.
+type on id=validation_default_username with value testUser OK
+21:07:42
+6.
+click on id=input_password OK
+21:07:42
+7.
+type on id=input_password with value testPsswd OK
+21:07:42
+8.
+click on id=validation_default_first_name OK
+21:07:42
+9.
+type on id=validation_default_first_name with value test OK
+21:07:42
+10.
+click on id=validation_default_last_name OK
+21:07:43
+11.
+type on id=validation_default_last_name with value test OK
+21:07:43
+12.
+click on id=validation_default_address OK
+21:07:43
+13.
+type on id=validation_default_address with value test OK
+21:07:43
+14.
+click on id=validation_default_phone OK
+21:07:44
+15.
+type on id=validation_default_phone with value test OK
+21:07:44
+16.
+click on id=validation_default_mail OK
+21:07:44
+17.
+type on id=validation_default_mail with value test OK
+21:07:44
+18.
+click on id=registration_button OK
+21:07:45
+'registration' completed successfully
+21:07:45
+Running 'use filter'
+21:08:10
+1.
+open on http://localhost:8080/logged OK
+21:08:11
+2.
+setWindowSize on 1511x1040 OK
+21:08:11
+3.
+click on id=validation_company OK
+21:08:11
+4.
+type on id=validation_company with value Sony OK
+21:08:12
+5.
+click on css=.col-md-3 > .btn OK
+21:08:12
+6.
+click on css=.col-md-3 > .btn OK
+21:08:12
+7.
+click on id=validation_company OK
+21:08:13
+8.
+type on id=validation_company with value Philips OK
+21:08:13
+9.
+click on css=.col-md-3 > .btn OK
+21:08:13
+10.
+click on id=validation_company OK
+21:08:13
+11.
+type on id=validation_company with value Sony OK
+21:08:14
+12.
+click on css=.col-md-3 > .btn OK
+21:08:14
+13.
+click on css=.col-md-3 > .btn OK
+21:08:14
+'use filter' completed successfully
+21:08:15
+Running 'edit personal info'
+21:08:31
+1.
+open on http://localhost:8080/logged OK
+21:08:32
+2.
+setWindowSize on 1511x1040 OK
+21:08:32
+3.
+click on id=index_customer_personal OK
+21:08:32
+4.
+click on id=customer_edit_button OK
+21:08:32
+5.
+click on id=input_phone_number OK
+21:08:33
+6.
+type on id=input_phone_number with value 89999999999 OK
+21:08:33
+7.
+click on id=save_edit_customer_button OK
+21:08:34
+'edit personal info' completed successfully
+21:08:34
+Running 'buy product'
+21:08:54
+1.
+open on http://localhost:8080/logged OK
+21:08:55
+2.
+setWindowSize on 1511x1040 OK
+21:08:55
+3.
+click on css=tr:nth-child(4) a > span OK
+21:08:55
+4.
+click on id=product_buy_button OK
+21:08:56
+5.
+click on id=product_check_order_edit_customer_button OK
+21:08:57
+6.
+click on id=address OK
+21:08:57
+7.
+click on id=address OK
+21:08:58
+8.
+type on id=address with value newtest OK
+21:08:58
+9.
+click on id=product_check_order_edit_customer_save_button OK
+21:08:58
+10.
+click on id=product_check_order_buy_customer_button OK
+21:08:58
+'buy product' completed successfully
+21:08:59
+Running 'log out'
+21:09:14
+1.
+open on http://localhost:8080/logged OK
+21:09:15
+2.
+setWindowSize on 1511x1040 OK
+21:09:15
+3.
+click on id=index_customer_log_out OK
+21:09:15
+'log out' completed successfully
+21:09:16
+Running 'order edit by admin'
+21:09:44
+1.
+open on http://localhost:8080/logged OK
+21:09:45
+2.
+setWindowSize on 1533x1040 OK
+21:09:45
+3.
+click on id=index_admin_orders OK
+21:09:45
+4.
+click on css=tr:nth-child(1) > td:nth-child(1) span OK
+21:09:46
+5.
+click on name=delivery_date OK
+21:09:46
+6.
+type on name=delivery_date with value 2021-09-27 OK
+21:09:47
+7.
+click on css=.col-md-2 > .btn OK
+21:09:47
+8.
+click on linkText=Main page OK
+21:09:47
+'order edit by admin' completed successfully
