@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Customer Edit</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+    body {
+      background-color: #454545;
+      color: #ffffff;
+    }
+    .title {
+      background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+      background-repeat: repeat;
+      background-position: center;
+      text-align: center;
+    }
+    table {
+      background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+      text-align: center;
+    }
+    tbody {
+      color: #ffffff;
+    }
+    thead {
+      background-color: #373737;
+      color: #ffffff;
+    }
+    tr:hover td {
+      background: #d7231a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+    <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+      <div class="btn-group" role="group" aria-label="top buttons">
+        <a id="customer_edit_to_main" href="/" class="btn btn-outline-danger" role="button">Main page</a>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+
+  <form th:action="'/save_edit_customer?customer_id=' + ${customer.get_id()}" method="post" id="form"></form>
+  <table class="table table-bordered mx-auto" style="margin-left: 20px; width: auto;" >
+    <tr>
+      <td>Login</td>
+      <td><input class="form-control" id="input_login" style="width: auto" type="text" name="login" th:value="${customer.get_login()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Password</td>
+      <td><input class="form-control" id="input_password" type="text" name="password" th:value="${customer.get_psswd()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>First Name</td>
+      <td><input class="form-control" id="input_first_name" type="text" name="first_name" th:value="${customer.get_first_name()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Last Name</td>
+      <td><input class="form-control" id="input_last_name" type="text" name="last_name" th:value="${customer.get_last_name()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Address</td>
+      <td><input class="form-control" id="input_address" type="text" name="address" th:value="${customer.get_address()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Phone number</td>
+      <td><input class="form-control" id="input_phone_number" type="text" name="phone_number" th:value="${customer.get_phone_number()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Mail</td>
+      <td><input class="form-control" id="inputmail" type="text" name="mail" th:value="${customer.get_mail()}" form="form"></td>
+    </tr>
+
+  </table>
+  <div class="col-md-2 mx-auto">
+    <button id="save_edit_customer_button" type="submit" class="btn btn-outline-danger" form="form">Save</button>
+  </div>
+
+  <br><br>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+</html>

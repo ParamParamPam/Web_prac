@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Main Page Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            background-color: #454545;
+            color: #ffffff;
+            text-align: center;
+        }
+        .title {
+            background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+            background-repeat: repeat;
+            background-position: center;
+        }
+        table {
+            background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+        }
+        tbody {
+            color: #ffffff;
+        }
+        thead {
+            background-color: #373737;
+            color: #ffffff;
+        }
+        tr:hover td {
+            background: #d7231a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+        <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+            <div class="btn-group" role="group" aria-label="top buttons">
+                <a id="index_admin_to_main" href="/logged" class="btn btn-outline-danger" role="button">Main Page</a>
+                <a id="index_admin_orders" href="/orders" class="btn btn-outline-danger" role="button">Orders</a>
+                <a id="index_admin_customers" href="/customers" class="btn btn-outline-danger" role="button">Customers</a>
+            </div>
+            <div class="btn-group" role="group" aria-label="top buttons_two">
+                <a id="index_admin_log_out" href="/log_out" class="btn btn-outline-danger" role="button">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+    <a style="margin-left: 20px;" id="index_admin_add_product" href="/add_product" class="btn btn-outline-danger" role="button">Add product</a>
+    <br><br>
+    <div style="margin-left: 10px;" class="form-row">
+        <div class="table-responsive col-md-3">
+            <form action="/filter" method="post">
+                <div class="col-md-6 mx-auto">
+                    <label for="validation_title" class="form-label"></label>
+                    <input type="text" class="form-control" id="validation_title" name="title" placeholder="Title">
+                </div>
+
+                <div class="col-md-6 mx-auto">
+                    <label for="validation_company" class="form-label"></label>
+                    <input type="text" class="form-control" id="validation_company" name="company" placeholder="Company">
+                </div>
+
+                <div class="col-md-6 mx-auto">
+                    <label for="validation_type" class="form-label"></label>
+                    <input type="text" class="form-control" id="validation_type" name="type" placeholder="Type">
+                </div>
+                <br>
+                <div class="col-md-3 mx-auto">
+                    <button type="submit" class="btn btn-outline-danger">Sort</button>
+                </div>
+            </form>
+        </div>
+        <div class="table-responsive col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col"> Title </th>
+                    <th scope="col"> Company </th>
+                    <th scope="col"> Type </th>
+                    <th scope="col"> Price </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${#lists.isEmpty(products)}">
+                    <td colspan="8"> Sorry, we are out of stock online </td>
+                </tr>
+                <tr th:each="product : ${products}">
+
+                    <form>
+                        <input type="hidden" name="index_product_id" th:value="${product.get_id()}"/>
+                    </form>
+
+                    <td scope="row"> <a th:href="'/product?product_id=' + ${product.get_id()}"> <span th:text="${product.get_title()}"> </span> </a></td>
+                    <td><span th:text="${product.get_company()}"> </span></td>
+                    <td><span th:text="${product.get_type()}"> </span></td>
+                    <td><span th:text="${product.get_price()}"> </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

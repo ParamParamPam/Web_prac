@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Product Edit</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+    body {
+      background-color: #454545;
+      color: #ffffff;
+    }
+    .title {
+      background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+      background-repeat: repeat;
+      background-position: center;
+      text-align: center;
+    }
+    table {
+      background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+      text-align: center;
+    }
+    tbody {
+      color: #ffffff;
+    }
+    thead {
+      background-color: #373737;
+      color: #ffffff;
+    }
+    tr:hover td {
+      background: #d7231a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+    <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+      <div class="btn-group" role="group" aria-label="top buttons">
+        <a id="product_edit_to_main" href="/" class="btn btn-outline-danger" role="button">Main page</a>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+
+  <form th:action="'/save_edit_product?product_id=' + ${product.get_id()}" method="post" id="form"></form>
+  <table class="table table-bordered mx-auto" style="margin-left: 20px; width: auto;">
+    <tr>
+      <td>Title</td>
+      <td><input class="form-control" id="inputTitle" style="width: auto" type="text" name="title" th:value="${product.get_title()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Type</td>
+      <td><input class="form-control" id="input_type" type="text" name="type" th:value="${product.get_type()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Company</td>
+      <td><input class="form-control" id="input_company" type="text" name="company" th:value="${product.get_company()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Assemble place</td>
+      <td><input class="form-control" id="input_assemble_place" type="text" name="assemble_place" th:value="${product.get_assemble_place()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Characteristics</td>
+      <td><input class="form-control" id="input_characteristics" type="text" name="characteristics" th:value="${product.get_characteristics()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Price</td>
+      <td><input class="form-control" id="input_price" type="text" name="price" th:value="${product.get_price()}" form="form"></td>
+    </tr>
+
+    <tr>
+      <td>Amount</td>
+      <td><input class="form-control" id="inputAmount" type="text" name="amount" th:value="${product.get_amount()}" form="form"></td>
+    </tr>
+
+
+  </table>
+  <div class="col-md-2 mx-auto">
+    <button id="save_edit_product_button" type="submit" class="btn btn-outline-danger" form="form">Save</button>
+  </div>
+
+  <br><br>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Customer Orders</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+    body {
+      background-color: #454545;
+      color: #ffffff;
+    }
+    .title {
+      background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+      background-repeat: repeat;
+      background-position: center;
+      text-align: center;
+    }
+    table {
+      background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+      text-align: center;
+    }
+    tbody {
+      color: #ffffff;
+    }
+    thead {
+      background-color: #373737;
+      color: #ffffff;
+    }
+    tr:hover td {
+      background: #d7231a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+    <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+      <div class="btn-group" role="group" aria-label="top buttons">
+        <a id="customer_orders_to_main" href="/logged" class="btn btn-outline-danger" role="button">Main page</a>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+  <table class="table table-bordered mx-auto" style="width: auto; margin-left: 20px;">
+    <thead>
+    <tr>
+      <th scope="col"> Order ID </th>
+      <th scope="col"> Address </th>
+      <th scope="col"> Delivery Date </th>
+      <th scope="col"> Order Date </th>
+      <th scope="col"> Order Price </th>
+      <th scope="col"> Status </th>
+      <th scope="col"> Product </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(orders)}">
+      <td colspan="8"> No orders yet </td>
+    </tr>
+    <tr th:each="order : ${orders}">
+      <form>
+          <input type="hidden" name="index_order_id" th:value="${order.get_id()}"/>
+      </form>
+      <td scope="row"><span th:text="${order.get_id()}"> </span> </a></td>
+      <td><span th:text="${order.get_address()}"> </span></td>
+      <td><span th:text="${order.get_delivery_date()}"> </span></td>
+      <td><span th:text="${order.get_order_date()}"> </span></td>
+      <td><span th:text="${order.get_price()}"> </span></td>
+      <td><span th:text="${order.get_status()}"> </span></td>
+      <td><a th:href="'/product?product_id=' + ${order.get_product_id().get_id()}"> <span th:text="${order.get_product_id().get_title()}"></span></a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+</html>

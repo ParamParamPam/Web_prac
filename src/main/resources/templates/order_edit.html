@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Order Edit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            background-color: #454545;
+            color: #ffffff;
+        }
+        .title {
+            background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+            background-repeat: repeat;
+            background-position: center;
+            text-align: center;
+        }
+        table {
+            background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+            text-align: center;
+        }
+        tbody {
+            color: #ffffff;
+        }
+        thead {
+            background-color: #373737;
+            color: #ffffff;
+        }
+        tr:hover td {
+            background: #d7231a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+        <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+            <div class="btn-group" role="group" aria-label="top buttons">
+                <a id="order_edit_to_main" href="/" class="btn btn-outline-danger" role="button">Main page</a>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+
+    <form th:action="'/save_edit_order?order_id=' + ${order.get_id()}" method="post" id="form"></form>
+    <table class="table table-bordered mx-auto" style="margin-left: 20px; width: auto;">
+        <tr>
+            <td>Order ID</td>
+            <td><span th:text="${order.get_id()}"> </span></td>
+        </tr>
+
+        <tr>
+            <td>Delivery Date</td>
+            <td><input class="form-control" type="text" name="delivery_date" th:value="${order.get_delivery_date()}" form="form"></td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td><input class="form-control" type="text" name="address" th:value="${order.get_address()}" form="form"></td>
+        </tr>
+
+        <tr>
+            <td>Status</td>
+            <td>
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0" th:text="'Current_state: ' + ${order.get_status()}"/>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="status_option1" value="Formed" form="form" checked>
+                            <label class="form-check-label" for="status_option1">
+                                Formed
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="status" id="status_option2" value="Assembling" form="form">
+                            <label class="form-check-label" for="status_option2">
+                                Assembling
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="status" id="status_option3" value="Sent" form="form">
+                            <label class="form-check-label" for="status_option3">
+                                Sent
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="status" id="status_option4" value="Delivered" form="form">
+                            <label class="form-check-label" for="status_option4">
+                                Delivered
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Order Date</td>
+            <td><span th:text="${order.get_order_date()}"></span></td>
+        </tr>
+
+        <tr>
+            <td>Order Price</td>
+            <td><span th:text="${order.get_price()}"></span></td>
+        </tr>
+
+        <tr>
+            <td>Product_id</td>
+            <td><span th:text="${order.get_product_id().get_id()}"> </span></td>
+        </tr>
+
+    </table>
+    <div class="col-md-2 mx-auto">
+        <button type="submit" class="btn btn-outline-danger" form="form">Save</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Customer Page Admin</title>
+    <meta http-equiv="Content-password" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            background-color: #454545;
+            color: #ffffff;
+            text-align: center;
+        }
+        .title {
+            background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+            background-repeat: repeat;
+            background-position: center;
+            text-align: center;
+        }
+        table {
+            background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+            text-align: center;
+        }
+        tbody {
+            color: #ffffff;
+        }
+        thead {
+            background-color: #373737;
+            color: #ffffff;
+        }
+        tr:hover td {
+            background: #d7231a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+        <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+            <div class="btn-group" role="group" aria-label="top buttons">
+                <a id="customer_admin_to_main" href="/" class="btn btn-outline-danger" role="button">Main page</a>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+
+    <table id="customer_table" class="table table-bordered mx-auto" style="margin-left: 20px; width: auto;">
+        <tbody>
+        <tr>
+            <td>Login</td>
+            <td><span th:text="${customer.get_login()}"> </span></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><span th:text="${customer.get_psswd()}"> </span></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><span th:text="${customer.get_first_name()}"> </span></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><span th:text="${customer.get_last_name()}"> </span></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><span th:text="${customer.get_address()}"> </span></td>
+        </tr>
+        <tr>
+            <td>Phone number</td>
+            <td><span th:text="${customer.get_phone_number()}"> </span></td>
+        </tr>
+        <tr>
+            <td>Mail</td>
+            <td><span th:text="${customer.get_mail()}"> </span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a id="customer_admin_edit_button" th:href="'/customer_edit?customer_id=' + ${customer.get_id()}" class="btn btn-outline-danger" role="button" style="color:#d7231a; margin-left: 20px">Edit</a>
+    <a id="customer_admin_delete_button" th:href="'/customer_delete?customer_id=' + ${customer.get_id()}" class="btn btn-outline-danger" role="button" style="color:#d7231a; margin-left: 20px">Delete</a><br><br>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

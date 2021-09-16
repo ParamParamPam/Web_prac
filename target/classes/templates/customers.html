@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Customers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+    body {
+      background-color: #454545;
+      color: #ffffff;
+      text-align: center;
+    }
+    .title {
+      background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+      background-repeat: repeat;
+      background-position: center;
+      text-align: center;
+    }
+    table {
+      background:  radial-gradient(farthest-corner at 50% 50%, darkred, #454545);
+      text-align: center;
+    }
+    tbody {
+      color: #ffffff;
+    }
+    thead {
+      background-color: #373737;
+      color: #ffffff;
+    }
+    tr:hover td {
+      background: #d7231a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+    <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+      <div class="btn-group" role="group" aria-label="top buttons">
+        <a href="/" class="btn btn-outline-danger" role="button">Main page</a>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+  <a style="margin-left: 20px;" id="customers_add_customer" href="/add_customer" class="btn btn-outline-danger" role="button">Add customer</a>
+  <br><br>
+
+  <table class="table table-bordered mx-auto" style="width: auto; margin-left: 20px;">
+    <thead>
+    <tr>
+      <th scope="col"> Customer ID </th>
+      <th scope="col"> Login </th>
+      <th scope="col"> First Name </th>
+      <th scope="col"> Last Name </th>
+      <th scope="col"> Address </th>
+      <th scope="col"> Phone Number </th>
+      <th scope="col"> Mail </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(customers)}">
+      <td colspan="8"> No customers yet </td>
+    </tr>
+    <tr th:each="customer : ${customers}">
+      <td scope="row"><a th:href="'/logged/personal?customer_id=' + ${customer.get_id()}"> <span th:text="${customer.get_id()}"> </span> </a></td>
+      <td><span th:text="${customer.get_login()}"> </span></td>
+      <td><span th:text="${customer.get_first_name()}"> </span></td>
+      <td><span th:text="${customer.get_last_name()}"> </span></td>
+      <td><span th:text="${customer.get_address()}"> </span></td>
+      <td><span th:text="${customer.get_phone_number()}"> </span></td>
+      <td><span th:text="${customer.get_mail()}"> </span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+</html>

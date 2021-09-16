@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Customer Add Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            background-color: #454545;
+            color: #ffffff;
+            text-align: center;
+        }
+        .title {
+            background-image: url(https://ruward.ru/files/cases/4sozdaniein.jpg);
+            background-repeat: repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title"><br><i>Designer Household Appliances</i><br><br></h1>
+        <nav class="navbar sticky-top navbar-light" style="background-color: #373737;">
+            <div class="btn-group" role="group" aria-label="top buttons">
+                <a id="customer_add_to_main" href="/" class="btn btn-outline-danger" role="button">Main page</a>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+
+    <form action="/customer_creation" method="post">
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_username" class="form-label"></label>
+            <input type="text" class="form-control" name="username" id="validation_default_username" required placeholder="Username">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="input_password" class="form-label"></label>
+            <input type="password" class="form-control" id="input_password" name="password" required placeholder="Password: Use strong password to protect your account">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_first_name" class="form-label"></label>
+            <input type="text" class="form-control" id="validation_default_first_name" name="first_name" required placeholder="First name">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_last_name" class="form-label"></label>
+            <input type="text" class="form-control" id="validation_default_last_name" name="last_name" required placeholder="Last name">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_address" class="form-label"></label>
+            <input type="text" class="form-control" id="validation_default_address" name="address" required placeholder="Address: City, street, house, apartment number">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_phone" class="form-label"></label>
+            <input type="text" class="form-control" id="validation_default_phone" name="phone_number" required placeholder="Phone Number: 89990099">
+        </div>
+
+        <div class="col-md-6 mx-auto">
+            <label for="validation_default_mail" class="form-label"></label>
+            <input type="text" class="form-control" id="validation_default_mail" name="mail" required placeholder="Mail: example@box.ru">
+        </div>
+        <br>
+        <div class="col-md-6 mx-auto">
+            <button id="add_customer_button" type="submit" class="btn btn-outline-danger">Add customer</button>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>
