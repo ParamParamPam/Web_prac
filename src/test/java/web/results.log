@@ -1,450 +1,552 @@
 Running 'log in'
-21:03:38
+14:56:36
 1.
 open on http://localhost:8080/ OK
-21:03:39
+14:56:36
 2.
 setWindowSize on 1936x1056 OK
-21:03:39
+14:56:36
 3.
 click on id=index_log_in OK
-21:03:39
+14:56:36
 4.
 click on id=input_username OK
-21:03:40
+14:56:37
 5.
 type on id=input_username with value testAdmin OK
-21:03:41
+14:56:37
 6.
 click on id=input_password OK
-21:03:42
+14:56:37
 7.
 type on id=input_password with value testPsswd OK
-21:03:43
+14:56:37
 8.
 click on id=log_in_button OK
-21:03:44
+14:56:38
 9.
 assertElementPresent on id=index_admin_log_out OK
-21:03:45
+14:56:38
 'log in' completed successfully
-21:03:46
+14:56:38
 Running 'add product'
-21:04:00
+14:58:05
 1.
 open on http://localhost:8080/logged OK
-21:04:01
+14:58:05
 2.
 setWindowSize on 1511x1040 OK
-21:04:01
+14:58:05
 3.
+assertText on xpath=//td[contains(.,'Sorry, we are out of stock online')] with value Sorry, we are out of stock online OK
+14:58:05
+4.
 click on id=index_admin_add_product OK
-21:04:01
-4.
+14:58:06
+5.
 click on id=validation_product_title OK
-21:04:02
-5.
-type on id=validation_product_title with value test OK
-21:04:03
+14:58:06
 6.
+type on id=validation_product_title with value name_before OK
+14:58:06
+7.
 click on id=validation_product_type OK
-21:04:03
-7.
+14:58:06
+8.
 type on id=validation_product_type with value test OK
-21:04:03
-8.
+14:58:06
+9.
 click on id=validation_product_company OK
-21:04:03
-9.
+14:58:06
+10.
 type on id=validation_product_company with value test OK
-21:04:04
-10.
+14:58:07
+11.
 click on id=validation_product_assemble OK
-21:04:04
-11.
+14:58:07
+12.
 type on id=validation_product_assemble with value test OK
-21:04:04
-12.
+14:58:07
+13.
 click on id=validation_characteristics OK
-21:04:04
-13.
+14:58:07
+14.
 type on id=validation_characteristics with value test OK
-21:04:05
-14.
+14:58:07
+15.
 click on id=validation_product_price OK
-21:04:05
-15.
+14:58:07
+16.
 type on id=validation_product_price with value 12 OK
-21:04:05
-16.
+14:58:07
+17.
 click on id=validation_amount OK
-21:04:05
-17.
+14:58:08
+18.
 type on id=validation_amount with value 12 OK
-21:04:06
-18.
+14:58:08
+19.
 click on id=add_product_button OK
-21:04:06
-19.
-click on css=tr:nth-child(3) a > span OK
-21:04:06
-'add product' completed successfully
-21:04:07
-Running 'edit product'
-21:04:15
-1.
-open on http://localhost:8080/logged OK
-21:04:15
-2.
-setWindowSize on 1511x1040 OK
-21:04:16
-3.
-click on css=tr:nth-child(3) a > span OK
-21:04:16
-4.
-click on id=product_admin_edit_button OK
-21:04:16
-5.
-click on id=inputTitle OK
-21:04:17
-6.
-type on id=inputTitle with value newtest OK
-21:04:17
-7.
-click on id=save_edit_product_button OK
-21:04:18
-8.
-click on id=product_admin_to_main OK
-21:04:18
-'edit product' completed successfully
-21:04:18
-Running 'delete product'
-21:04:46
-1.
-open on http://localhost:8080/logged OK
-21:04:47
-2.
-setWindowSize on 1511x1040 OK
-21:04:47
-3.
-click on css=tr:nth-child(4) a > span OK
-21:04:47
-4.
-click on id=product_admin_delete_button OK
-21:04:48
-'delete product' completed successfully
-21:04:49
-Running 'add customer'
-21:05:48
-1.
-open on http://localhost:8080/logged OK
-21:05:49
-2.
-setWindowSize on 1533x1040 OK
-21:05:49
-3.
-click on id=index_admin_customers OK
-21:05:49
-4.
-click on id=customers_add_customer OK
-21:05:50
-5.
-click on id=validation_default_username OK
-21:05:51
-6.
-type on id=validation_default_username with value AEGtt OK
-21:05:51
-7.
-click on id=input_password OK
-21:05:52
-8.
-type on id=input_password with value test OK
-21:05:52
-9.
-click on id=validation_default_first_name OK
-21:05:52
-10.
-type on id=validation_default_first_name with value test OK
-21:05:52
-11.
-click on id=validation_default_last_name OK
-21:05:53
-12.
-type on id=validation_default_last_name with value test OK
-21:05:53
-13.
-click on id=validation_default_address OK
-21:05:53
-14.
-type on id=validation_default_address with value test OK
-21:05:53
-15.
-click on id=validation_default_phone OK
-21:05:53
-16.
-type on id=validation_default_phone with value 899999999999 OK
-21:05:54
-17.
-click on id=validation_default_mail OK
-21:05:54
-18.
-type on id=validation_default_mail with value test@test.ru OK
-21:05:54
-19.
-click on id=add_customer_button OK
-21:05:54
+14:58:08
 20.
-click on id=index_admin_customers OK
-21:05:55
+assertText on xpath=//span[contains(.,'name_before')] with value name_before OK
+14:58:08
 21.
-click on css=tr:nth-child(5) a > span OK
-21:05:55
-'add customer' completed successfully
-21:05:56
-Running 'edit customer'
-21:06:15
+assertNotText on xpath=//a/span with value Sorry, we are out of stock online OK
+14:58:08
+'add product' completed successfully
+14:58:08
+Running 'edit product'
+14:58:15
 1.
 open on http://localhost:8080/logged OK
-21:06:16
+14:58:15
 2.
-setWindowSize on 1533x1040 OK
-21:06:16
+setWindowSize on 1511x1040 OK
+14:58:15
 3.
-click on id=index_admin_customers OK
-21:06:17
+assertText on xpath=//span[contains(.,'name_before')] with value name_before OK
+14:58:15
 4.
-click on css=tr:nth-child(5) a > span OK
-21:06:17
+click on css=a > span OK
+14:58:16
 5.
-click on id=customer_admin_edit_button OK
-21:06:18
+click on id=product_admin_edit_button OK
+14:58:16
 6.
-click on id=input_first_name OK
-21:06:18
+click on id=inputTitle OK
+14:58:16
 7.
-type on id=input_first_name with value newtest OK
-21:06:19
+type on id=inputTitle with value name_after OK
+14:58:16
 8.
-click on id=save_edit_customer_button OK
-21:06:19
-'edit customer' completed successfully
-21:06:19
-Running 'delete customer'
-21:06:28
+click on id=save_edit_product_button OK
+14:58:16
+9.
+click on id=product_admin_to_main OK
+14:58:17
+10.
+assertText on xpath=//span[contains(.,'name_after')] with value name_after OK
+14:58:17
+'edit product' completed successfully
+14:58:17
+Running 'delete product'
+14:58:22
 1.
 open on http://localhost:8080/logged OK
-21:06:29
+14:58:22
+2.
+setWindowSize on 1511x1040 OK
+14:58:22
+3.
+assertText on xpath=//span[contains(.,'name_after')] with value name_after OK
+14:58:22
+4.
+click on xpath=//a/span OK
+14:58:23
+5.
+click on id=product_admin_delete_button OK
+14:58:23
+6.
+assertText on xpath=//td[contains(.,'Sorry, we are out of stock online')] with value Sorry, we are out of stock online OK
+14:58:23
+'delete product' completed successfully
+14:58:23
+Running 'add customer'
+14:58:43
+1.
+open on http://localhost:8080/logged OK
+14:58:43
 2.
 setWindowSize on 1533x1040 OK
-21:06:29
+14:58:43
 3.
 click on id=index_admin_customers OK
-21:06:29
+14:58:43
 4.
-click on css=tr:nth-child(5) a > span OK
-21:06:30
+assertText on xpath=//td[contains(.,'No customers yet')] with value No customers yet OK
+14:58:44
 5.
+click on id=customers_add_customer OK
+14:58:44
+6.
+click on id=validation_default_username OK
+14:58:44
+7.
+type on id=validation_default_username with value testCustomer OK
+14:58:44
+8.
+click on id=input_password OK
+14:58:44
+9.
+type on id=input_password with value testPsswd OK
+14:58:45
+10.
+click on id=validation_default_first_name OK
+14:58:45
+11.
+type on id=validation_default_first_name with value test OK
+14:58:45
+12.
+click on id=validation_default_last_name OK
+14:58:45
+13.
+type on id=validation_default_last_name with value test OK
+14:58:45
+14.
+click on id=validation_default_address OK
+14:58:45
+15.
+type on id=validation_default_address with value test OK
+14:58:45
+16.
+click on id=validation_default_phone OK
+14:58:46
+17.
+type on id=validation_default_phone with value 899999999999 OK
+14:58:46
+18.
+click on id=validation_default_mail OK
+14:58:46
+19.
+type on id=validation_default_mail with value test@test.ru OK
+14:58:46
+20.
+click on id=add_customer_button OK
+14:58:46
+21.
+click on id=index_admin_customers OK
+14:58:46
+22.
+assertText on xpath=//span[contains(.,'testCustomer')] with value testCustomer OK
+14:58:46
+23.
+assertText on css=td:nth-child(3) > span with value test OK
+14:58:47
+24.
+assertText on css=td:nth-child(7) > span with value test@test.ru OK
+14:58:47
+25.
+assertNotText on xpath=//td[2] with value No customers yet OK
+14:58:47
+'add customer' completed successfully
+14:58:47
+Running 'edit customer'
+14:58:52
+1.
+open on http://localhost:8080/logged OK
+14:58:53
+2.
+setWindowSize on 1533x1040 OK
+14:58:53
+3.
+click on id=index_admin_customers OK
+14:58:53
+4.
+assertText on xpath=//span[contains(.,'testCustomer')] with value testCustomer OK
+14:58:53
+5.
+assertText on xpath=//td[3] with value test OK
+14:58:53
+6.
+assertText on xpath=//span[contains(.,'test@test.ru')] with value test@test.ru OK
+14:58:54
+7.
+click on xpath=//a/span OK
+14:58:54
+8.
+click on id=customer_admin_edit_button OK
+14:58:54
+9.
+click on id=input_first_name OK
+14:58:54
+10.
+type on id=input_first_name with value new_test OK
+14:58:54
+11.
+click on id=inputmail OK
+14:58:54
+12.
+type on id=inputmail with value new_test@test.ru OK
+14:58:55
+13.
+click on id=save_edit_customer_button OK
+14:58:55
+14.
+click on id=customer_admin_to_main OK
+14:58:55
+15.
+click on id=index_admin_customers OK
+14:58:55
+16.
+assertText on xpath=//td[contains(.,'new_test')] with value new_test OK
+14:58:55
+17.
+assertText on xpath=//span[contains(.,'new_test@test.ru')] with value new_test@test.ru OK
+14:58:56
+'edit customer' completed successfully
+14:58:56
+Running 'delete customer'
+14:59:02
+1.
+open on http://localhost:8080/logged OK
+14:59:02
+2.
+setWindowSize on 1533x1040 OK
+14:59:02
+3.
+click on id=index_admin_customers OK
+14:59:02
+4.
+assertText on xpath=//td[contains(.,'testCustomer')] with value testCustomer OK
+14:59:02
+5.
+click on xpath=//a/span OK
+14:59:03
+6.
 click on id=customer_admin_delete_button OK
-21:06:30
+14:59:03
+7.
+assertText on xpath=//td[contains(.,'No customers yet')] with value No customers yet OK
+14:59:03
 'delete customer' completed successfully
-21:06:30
+14:59:03
 Running 'registration'
-21:07:40
+15:01:01
 1.
 open on http://localhost:8080/ OK
-21:07:40
+15:01:01
 2.
 setWindowSize on 1511x1040 OK
-21:07:40
+15:01:01
 3.
 click on id=index_registration OK
-21:07:41
+15:01:01
 4.
 click on id=validation_default_username OK
-21:07:41
+15:01:02
 5.
 type on id=validation_default_username with value testUser OK
-21:07:42
+15:01:02
 6.
 click on id=input_password OK
-21:07:42
+15:01:02
 7.
 type on id=input_password with value testPsswd OK
-21:07:42
+15:01:02
 8.
 click on id=validation_default_first_name OK
-21:07:42
+15:01:02
 9.
 type on id=validation_default_first_name with value test OK
-21:07:42
+15:01:03
 10.
 click on id=validation_default_last_name OK
-21:07:43
+15:01:03
 11.
 type on id=validation_default_last_name with value test OK
-21:07:43
+15:01:03
 12.
 click on id=validation_default_address OK
-21:07:43
+15:01:03
 13.
 type on id=validation_default_address with value test OK
-21:07:43
+15:01:03
 14.
 click on id=validation_default_phone OK
-21:07:44
+15:01:03
 15.
 type on id=validation_default_phone with value test OK
-21:07:44
+15:01:03
 16.
 click on id=validation_default_mail OK
-21:07:44
+15:01:04
 17.
 type on id=validation_default_mail with value test OK
-21:07:44
+15:01:04
 18.
 click on id=registration_button OK
-21:07:45
+15:01:04
+19.
+assertText on xpath=//h1[contains(.,'Account created!')] with value Account created! OK
+15:01:04
 'registration' completed successfully
-21:07:45
-Running 'use filter'
-21:08:10
+15:01:04
+Running 'buy product'
+15:01:38
 1.
 open on http://localhost:8080/logged OK
-21:08:11
+15:01:39
 2.
 setWindowSize on 1511x1040 OK
-21:08:11
+15:01:39
 3.
-click on id=validation_company OK
-21:08:11
+click on id=index_customer_orders OK
+15:01:39
 4.
-type on id=validation_company with value Sony OK
-21:08:12
+assertText on xpath=//td[contains(.,'No orders yet')] with value No orders yet OK
+15:01:39
 5.
-click on css=.col-md-3 > .btn OK
-21:08:12
+click on id=customer_orders_to_main OK
+15:01:39
 6.
-click on css=.col-md-3 > .btn OK
-21:08:12
+assertText on xpath=//td[contains(.,'name_before')] with value name_before OK
+15:01:40
 7.
-click on id=validation_company OK
-21:08:13
+click on xpath=//a/span OK
+15:01:40
 8.
-type on id=validation_company with value Philips OK
-21:08:13
+click on id=product_buy_button OK
+15:01:40
 9.
-click on css=.col-md-3 > .btn OK
-21:08:13
+assertText on xpath=//table[@id='customer_info_table']/tbody/tr[3]/td[2]/span with value test OK
+15:01:40
 10.
-click on id=validation_company OK
-21:08:13
+click on id=product_check_order_edit_customer_button OK
+15:01:40
 11.
-type on id=validation_company with value Sony OK
-21:08:14
+click on id=address OK
+15:01:40
 12.
-click on css=.col-md-3 > .btn OK
-21:08:14
+type on id=address with value new_test OK
+15:01:41
 13.
-click on css=.col-md-3 > .btn OK
-21:08:14
-'use filter' completed successfully
-21:08:15
+click on id=product_check_order_edit_customer_save_button OK
+15:01:41
+14.
+click on id=product_check_order_buy_customer_button OK
+15:01:41
+15.
+assertText on xpath=//h1[contains(.,'Order in processing')] with value Order in processing OK
+15:01:41
+16.
+click on id=order_success_to_main OK
+15:01:41
+17.
+click on id=index_customer_orders OK
+15:01:42
+18.
+assertNotText on xpath=//td[2] with value No orders yet OK
+15:01:42
+19.
+assertText on xpath=//span[contains(.,'new_test')] with value new_test OK
+15:01:42
+'buy product' completed successfully
+15:01:42
 Running 'edit personal info'
-21:08:31
+15:01:59
 1.
 open on http://localhost:8080/logged OK
-21:08:32
+15:02:00
 2.
 setWindowSize on 1511x1040 OK
-21:08:32
+15:02:00
 3.
 click on id=index_customer_personal OK
-21:08:32
+15:02:00
 4.
+assertText on xpath=//table[@id='customer_table']/tbody/tr[3]/td[2] with value test OK
+15:02:00
+5.
 click on id=customer_edit_button OK
-21:08:32
-5.
-click on id=input_phone_number OK
-21:08:33
+15:02:01
 6.
-type on id=input_phone_number with value 89999999999 OK
-21:08:33
+click on id=input_first_name OK
+15:02:01
 7.
-click on id=save_edit_customer_button OK
-21:08:34
-'edit personal info' completed successfully
-21:08:34
-Running 'buy product'
-21:08:54
-1.
-open on http://localhost:8080/logged OK
-21:08:55
-2.
-setWindowSize on 1511x1040 OK
-21:08:55
-3.
-click on css=tr:nth-child(4) a > span OK
-21:08:55
-4.
-click on id=product_buy_button OK
-21:08:56
-5.
-click on id=product_check_order_edit_customer_button OK
-21:08:57
-6.
-click on id=address OK
-21:08:57
-7.
-click on id=address OK
-21:08:58
+type on id=input_first_name with value new_test OK
+15:02:01
 8.
-type on id=address with value newtest OK
-21:08:58
+click on id=save_edit_customer_button OK
+15:02:01
 9.
-click on id=product_check_order_edit_customer_save_button OK
-21:08:58
-10.
-click on id=product_check_order_buy_customer_button OK
-21:08:58
-'buy product' completed successfully
-21:08:59
+assertText on xpath=//table[@id='customer_table']/tbody/tr[3]/td[2]/span with value new_test OK
+15:02:01
+'edit personal info' completed successfully
+15:02:01
 Running 'log out'
-21:09:14
+15:02:10
 1.
 open on http://localhost:8080/logged OK
-21:09:15
+15:02:10
 2.
 setWindowSize on 1511x1040 OK
-21:09:15
+15:02:11
 3.
 click on id=index_customer_log_out OK
-21:09:15
+15:02:11
+4.
+assertElementPresent on id=index_log_in OK
+15:02:11
+5.
+assertElementPresent on id=index_registration OK
+15:02:11
 'log out' completed successfully
-21:09:16
+15:02:11
 Running 'order edit by admin'
-21:09:44
+15:02:42
 1.
 open on http://localhost:8080/logged OK
-21:09:45
+15:02:43
 2.
 setWindowSize on 1533x1040 OK
-21:09:45
+15:02:43
 3.
 click on id=index_admin_orders OK
-21:09:45
+15:02:43
 4.
-click on css=tr:nth-child(1) > td:nth-child(1) span OK
-21:09:46
+assertText on xpath=//td[4]/span with value 2021-09-24 OK
+15:02:43
 5.
-click on name=delivery_date OK
-21:09:46
+assertText on xpath=//td[7]/span with value Formed OK
+15:02:43
 6.
-type on name=delivery_date with value 2021-09-27 OK
-21:09:47
+click on css=td:nth-child(1) span OK
+15:02:43
 7.
-click on css=.col-md-2 > .btn OK
-21:09:47
+click on id=status_option3 OK
+15:02:43
 8.
-click on linkText=Main page OK
-21:09:47
+click on name=delivery_date OK
+15:02:43
+9.
+type on name=delivery_date with value 2021-09-29 OK
+15:02:44
+10.
+click on css=.col-md-2 > .btn OK
+15:02:44
+11.
+assertText on xpath=//td[4]/span with value 2021-09-29 OK
+15:02:44
+12.
+assertText on xpath=//td[7]/span with value Sent OK
+15:02:44
 'order edit by admin' completed successfully
+15:02:44
+Running 'use filter'
+15:03:33
+1.
+open on http://localhost:8080/ OK
+15:03:34
+2.
+setWindowSize on 1511x1040 OK
+15:03:34
+3.
+assertText on xpath=//td[contains(.,'AEG')] with value AEG OK
+15:03:34
+4.
+click on id=validation_company OK
+15:03:35
+5.
+type on id=validation_company with value AEG OK
+15:03:35
+6.
+click on css=.col-md-3 > .btn OK
+15:03:35
+7.
+assertText on xpath=//td[2]/span with value AEG OK
+15:03:35
+8.
+assertNotText on xpath=//td[2] with value Phillips OK
+15:03:35
+'use filter' completed successfully
